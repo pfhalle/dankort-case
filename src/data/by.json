@@ -1,0 +1,12 @@
+[
+  { "name": "København", "col": 1, "amount": "24.000", "year": 2026 },
+  { "name": "Aarhus",    "col": 2, "amount": "21.000", "year": 2026 },
+  { "name": "Odense",    "col": 1, "amount": "18.500", "year": 2026 },
+  { "name": "Aalborg",   "col": 2, "amount": "15.700", "year": 2026 },
+  { "name": "Esbjerg",   "col": 1, "amount": "9.200",  "year": 2026 },
+  { "name": "Horsens",   "col": 2, "amount": "7.800",  "year": 2026 },
+  { "name": "Randers",   "col": 1, "amount": "8.100",  "year": 2026 },
+  { "name": "Kolding",   "col": 2, "amount": "8.900",  "year": 2026 },
+  { "name": "Vejle",     "col": 1, "amount": "10.300", "year": 2026 },
+  { "name": "Silkeborg", "col": 2, "amount": "9.500",  "year": 2026 }
+]

@@ -1,5 +1,11 @@
 ---
 import Faq from "../components/Faq.astro";
+import Kart from "../components/Kart.astro";
+import "../Style/naturfonden.css";
+import Footer from "../components/Footer.astro";
+import Headerr from "../components/Headerr.astro";
+import "../Style/headerr.css";
+import "../Style/fonts.css";
 ---
 
 <html lang="en">
@@ -7,17 +13,43 @@ import Faq from "../components/Faq.astro";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Naturfonden</title>
   </head>
   <body>
+    <Headerr />
+    <Kart />
     <section>
-      <h2>Den Danske Naturfond</h2>
-      <h3>Sammen for mere natur</h3>
+      <section class="naturfonden">
+        <div class="nature-text">
+          <h2 data-da="Den Danske Naturfond" data-en="The Danish Nature Fund">Den Danske Naturfond</h2>
+
+          <h3 data-da="Sammen for mere natur" data-en="Together for more nature">Sammen for mere natur</h3>
+
+          <p data-da="Dankort samarbejder med Den Danske Naturfond om at give vores natur i Danmark mere plads." data-en="Dankort collaborates with The Danish Nature Fund to give Danish nature more space.">
+            Dankort samarbejder med Den Danske Naturfond om at give vores natur i Danmark mere plads.
+          </p>
+
+          <p
+            data-da="Ved at hjælpe det danske øremærke får vi danskere på 1 år indsamlet et beløb på 10 mio. danske kroner, som skal være med til at hjælpe den danske natur og forbedre vores miljø."
+            data-en="Through Dankort Øremærket, Danes help collect 10 million kroner in one year. The money supports Danish nature and contributes to projects that help protect and improve the environment we know today."
+          >
+            Ved at hjælpe det danske øremærke får vi danskere på 1 år indsamlet et beløb på 10 mio. danske kroner, som skal være med til at hjælpe den danske natur og forbedre vores miljø.
+          </p>
+
+          <a href="https://naturfonden.dk/om-fonden/" class="naturfonden-btn" data-da="Læs mere" data-en="Read more"> Læs mere </a>
+        </div>
+
+        <video class="naturfonden-video" src="/pictures/naturfunden.mp4" autoplay muted loop playsinline></video>
+      </section>
+
+      <Faq />
+      <Footer />
+      <script is:inline src="/js/language.js"></script>
     </section>
-    <h1>BLABKALNALANKLN</h1>
-    <h2>kanjfklkrflkj</h2>
-    <Faq />
   </body>
 </html>
