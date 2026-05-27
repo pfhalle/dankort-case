@@ -1,95 +1,158 @@
 ---
-import "../style/benefits.css";
+import "../Style/benefits.css";
+import Headerr from "../components/Headerr.astro";
+import By from "../components/By.astro";
+import "../Style/fonts.css";
+import "../Style/headerr.css";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.icon" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Fordele</title>
   </head>
-  <body>
-    <section>
-      <h1>Din Bydel</h1>
-      <p>Vælg din valgte by og se hvor meget byen har samlet ind til Naturfonden!</p>
-      <!-- Knap/button til at søge efter alle danske byer -->
-      <!-- Billede kort over byen efter man har trykket på det valgte by via knap -->
-    </section>
 
+  <main>
+    <Headerr />
+    <By />
+  </main>
+
+  <body>
     <section class="green-background">
       <div class="tjek-dankort">
         <div class="flexbox1">
           <div class="mobile-heading-image">
-            <h2>Tjek om du betaler<br />med Dankort</h2>
+            <h2 data-da="Tjek om du betaler med Dankort" data-en="Check if you pay with Dankort">
+              Tjek om du betaler<br />med Dankort
+            </h2>
           </div>
 
           <div class="flexbox2">
             <div class="tjek-dankort_billede desktop-img">
-              <img src="public/pictures/gråtdankort.svg" alt="Dankort betalingskort" />
+              <img src="public/pictures/gråtkortps2.png" alt="Dankort betalingskort" />
             </div>
 
             <div class="tjek-dankort_tekst">
               <ol>
-                <li>Tjek om du har Dankort logoen på dit fysiske eller digitale betalingskort</li>
-                <li>Hvis svaret er JA: Tillykke, du har Dankort!</li>
-                <li>Hvis svaret er NEJ: Klik på knappen nedenunder, og skaf dig Dankort i dag</li>
+                <li data-da="Tjek om du har Dankort-logoet på dit fysiske eller digitale betalingskort" data-en="Check if you have the Dankort logo on your physical or digital payment card">
+                  Tjek om du har Dankort-logoet på dit fysiske eller digitale betalingskort
+                </li>
+
+                <li data-da="Hvis svaret er JA: Tillykke, du har Dankort!" data-en="If the answer is YES: Congratulations, you have Dankort!">Hvis svaret er JA: Tillykke, du har Dankort!</li>
+
+                <li data-da="Hvis svaret er NEJ: Klik på knappen nedenunder, og skaf dig Dankort i dag" data-en="If the answer is NO: Click the button below and get Dankort today">
+                  Hvis svaret er NEJ: Klik på knappen nedenunder, og skaf dig Dankort i dag
+                </li>
               </ol>
             </div>
 
             <div class="tjek-dankort_billede mobile-img">
-              <img src="public/pictures/gråtdankort.svg" alt="Dankort betalingskort" />
+              <img src="public/pictures/gråtkortps2.png" alt="Dankort betalingskort" />
             </div>
           </div>
 
-          <a class="dankort-knap" href="https://dankort.dk/dankort-i-apple-pay"> Få dit Dankort i dag! </a>
+          <a class="dankort-knap" href="https://dankort.dk/dankort-i-apple-pay" data-da="Få dit Dankort i dag!" data-en="Get your Dankort today!"> Få dit Dankort i dag! </a>
         </div>
       </div>
     </section>
-    <!-- festival -->
+
     <section class="roskilde-festival">
       <div class="roskilde-festival_indhold">
         <div class="roskilde-festival_tekst">
-          <h2>Vind 2 pas til Roskilde<br />festivalen 2026!</h2>
-          <p>Tilmeld dig giveawayen og vær med i trækningen af to pas til Roskilde festival, for dig og en ven.</p>
+          <h2 data-da="Vind 2 pas til Roskilde festivalen 2026!" data-en="Win 2 passes to Roskilde Festival 2026!">
+            Vind 2 pas til Roskilde<br />festivalen 2026!
+          </h2>
+
+          <p data-da="Tilmeld dig giveawayen og vær med i trækningen af to pas til Roskilde Festival, for dig og en ven." data-en="Sign up for the giveaway and enter the draw to win two passes to Roskilde Festival for you and a friend.">
+            Tilmeld dig giveawayen og vær med i trækningen af to pas til Roskilde Festival, for dig og en ven.
+          </p>
 
           <ol>
-            <li>Få Dankort på din eget kort</li>
-            <li>Inviter en ven som opretter Dankort</li>
-            <li>Tilmeld dig giveawayen</li>
+            <li data-da="Få Dankort på dit eget kort" data-en="Get Dankort on your own card">Få Dankort på dit eget kort</li>
+
+            <li data-da="Inviter en ven, som opretter Dankort" data-en="Invite a friend who signs up for Dankort">Inviter en ven, som opretter Dankort</li>
+
+            <li data-da="Tilmeld dig giveawayen" data-en="Sign up for the giveaway">Tilmeld dig giveawayen</li>
           </ol>
 
-          <a class="ros_knap" href="/giveaway">Tilmeld dig her</a>
+          <a class="ros_knap" href="https://www.instagram.com/dankort.danmark/" data-da="Tilmeld dig her!" data-en="Sign up here!"> Tilmeld dig her! </a>
         </div>
 
         <div class="ros-billede">
-          <img src="public/pictures/roskildeiphone.svg" alt="Instagram opslag om Roskilde Festival giveaway" />
+          <img src="/pictures/rosbillede-skarp.png" alt="Instagram opslag om Roskilde Festival giveaway" />
         </div>
       </div>
     </section>
-    <!-- 3 gode grund delen -->
+
     <section class="grunde">
-      <h2>3 gode grund til at<br class="linebreak" /> betale med Dankort</h2>
+      <h2 data-da="3 gode grunde til at betale med Dankort" data-en="3 good reasons to pay with Dankort">
+        3 gode grunde til at<br class="linebreak" /> betale med Dankort
+      </h2>
+
       <section class="box wrapper-1">
-        <h3>1. Billigt for butikkerne</h3>
-        <p>Dankort er det billigste betalingsmiddel for langt de fleste butikker.</p>
-        <p>Når du betaler med Dankort, er du således med til at holde butikkernes omkostninger til betalinger nede.</p>
-        <p>Det er ikke kun en fordel for butikkerne i dit lokalområde - men også for dig som forbruger, da butikkernes omkostninger påvirker priserne.</p>
+        <h3 data-da="1. Billigt for butikkerne" data-en="1. Cheaper for shops">1. Billigt for butikkerne</h3>
+
+        <p data-da="Dankort er det billigste betalingsmiddel for langt de fleste butikker." data-en="Dankort is the cheapest payment method for most shops.">Dankort er det billigste betalingsmiddel for langt de fleste butikker.</p>
+
+        <p data-da="Når du betaler med Dankort, er du med til at holde butikkernes betalingsomkostninger nede." data-en="When you pay with Dankort, you help keep shops’ payment costs down.">
+          Når du betaler med Dankort, er du med til at holde butikkernes betalingsomkostninger nede.
+        </p>
+
+        <p
+          data-da="Det er ikke kun en fordel for butikkerne i dit lokalområde, men også for dig som forbruger, da butikkernes omkostninger påvirker priserne."
+          data-en="This benefits not only local shops, but also you as a consumer, because shops’ costs can affect prices."
+        >
+          Det er ikke kun en fordel for butikkerne i dit lokalområde, men også for dig som forbruger, da butikkernes omkostninger påvirker priserne.
+        </p>
       </section>
+
       <section class="box wrapper-2">
-        <h3>2. Nemt og sikkert</h3>
-        <p>Det er lige så sikkert at betale med Dankort i Apple Pay som med det fysiske kort.</p>
-        <p>Når du betaler med Apple Pay, lagres kortnummeret aldrig på hverken din mobil eller på Apples servere.</p>
-        <p>Du skal heller ikke indtaste pinkode i forretningerne, da telefonen anvender face-id og derfor kan din pinkode heller ikke aflures. På nettet skal du ikke indtaste kortnummer og CVV, og derfor kan disse numre heller ikke opsnappes.</p>
+        <h3 data-da="2. Nemt og sikkert" data-en="2. Easy and secure">2. Nemt og sikkert</h3>
+
+        <p data-da="Det er lige så sikkert at betale med Dankort i Apple Pay som med det fysiske kort." data-en="Paying with Dankort in Apple Pay is just as secure as paying with the physical card.">
+          Det er lige så sikkert at betale med Dankort i Apple Pay som med det fysiske kort.
+        </p>
+
+        <p data-da="Når du betaler med Apple Pay, lagres kortnummeret aldrig på hverken din mobil eller Apples servere." data-en="When you pay with Apple Pay, your card number is never stored on your phone or on Apple’s servers.">
+          Når du betaler med Apple Pay, lagres kortnummeret aldrig på hverken din mobil eller Apples servere.
+        </p>
+
+        <p
+          data-da="Du skal heller ikke indtaste pinkode i butikkerne, da telefonen bruger Face ID. På nettet skal du ikke indtaste kortnummer og CVV, og derfor kan disse oplysninger ikke opsnappes."
+          data-en="You also do not need to enter your PIN in shops, because the phone uses Face ID. Online, you do not need to enter your card number or CVV, which helps protect your information."
+        >
+          Du skal heller ikke indtaste pinkode i butikkerne, da telefonen bruger Face ID. På nettet skal du ikke indtaste kortnummer og CVV, og derfor kan disse oplysninger ikke opsnappes.
+        </p>
       </section>
+
       <section class="box wrapper-3">
-        <h3>3. Dansk betalingsmiddel</h3>
-        <p>Dankort er udviklet af de danske banker til glæde og gavn for forbrugere og butikker i Danmark.</p>
-        <p>Dankort bliver af Nationalbanken betragtet som en del af den kritiske betalingsinfrastruktur.</p>
-        <p>Selvom Dankort i dag er ejet af den paneuropæiske betalingsvirksomhed Nexi, er betalingsinfrastrukturen dansk og drevet under Nets Danmark.</p>
+        <h3 data-da="3. Dansk betalingsmiddel" data-en="3. A Danish payment method">3. Dansk betalingsmiddel</h3>
+
+        <p data-da="Dankort er udviklet af de danske banker til glæde og gavn for forbrugere og butikker i Danmark." data-en="Dankort was developed by Danish banks for the benefit of consumers and shops in Denmark.">
+          Dankort er udviklet af de danske banker til glæde og gavn for forbrugere og butikker i Danmark.
+        </p>
+
+        <p data-da="Dankort bliver af Nationalbanken betragtet som en del af den kritiske betalingsinfrastruktur." data-en="The Danish central bank considers Dankort part of Denmark’s critical payment infrastructure.">
+          Dankort bliver af Nationalbanken betragtet som en del af den kritiske betalingsinfrastruktur.
+        </p>
+
+        <p
+          data-da="Selvom Dankort i dag er ejet af den paneuropæiske betalingsvirksomhed Nexi, er betalingsinfrastrukturen dansk og drevet under Nets Danmark."
+          data-en="Although Dankort is now owned by the pan-European payment company Nexi, the payment infrastructure is Danish and operated under Nets Denmark."
+        >
+          Selvom Dankort i dag er ejet af den paneuropæiske betalingsvirksomhed Nexi, er betalingsinfrastrukturen dansk og drevet under Nets Danmark.
+        </p>
       </section>
     </section>
+
+    <Footer />
+    <script is:inline src="/js/language.js"></script>
   </body>
+
+
 </html>
