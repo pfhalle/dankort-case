@@ -3,9 +3,7 @@ import { supabase } from "../supabase.js";
 import svgContent from "../../public/pictures/dot.svg?raw";
 import "../Style/kart.css";
 
-const { data: omraader, error } = await supabase
-  .from("naturfonden")
-  .select("*");
+const { data: omraader, error } = await supabase.from("naturfonden").select("*");
 
 if (error) {
   console.error("Fejl ved hentning af data:", error.message);
@@ -17,10 +15,9 @@ if (error) {
     <source src="/pictures/videonaturfonden.mp4" type="video/mp4" />
   </video>
   <div class="hero-tekst">
-    <h1>Naturfonden</h1>
-    <p class="lille-tekst">
-      Trykk deg inn på karte for at se hvilke områder du er med på at redde
-    </p>
+    <h1 data-da="Naturfonden" data-en="The Nature Fund">Naturfonden</h1>
+
+    <p class="lille-tekst" data-da="Tryk på kortet for at se, hvilke områder du er med til at redde" data-en="Click on the map to see which areas you help protect">Tryk på kortet for at se, hvilke områder du er med til at redde</p>
   </div>
 
   <div class="map">
@@ -50,8 +47,7 @@ if (error) {
       dot.classList.add("aktiv");
       document.getElementById("info-title").textContent = match.titel;
       document.getElementById("info-region").textContent = match.region;
-      document.getElementById("info-description").textContent =
-        match.informasjon;
+      document.getElementById("info-description").textContent = match.informasjon;
 
       const image = document.getElementById("info-image");
       if (match.image_url) {
@@ -61,8 +57,7 @@ if (error) {
         image.hidden = true;
       }
 
-      document.getElementById("info-link").href =
-        match.link_url ?? `/natur/${match.slug}`;
+      document.getElementById("info-link").href = match.link_url ?? `/natur/${match.slug}`;
       document.getElementById("info-box").classList.remove("hidden");
     }
 

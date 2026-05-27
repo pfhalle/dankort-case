@@ -1,14 +1,14 @@
 ---
-import byerData from "../data/By.json";
+import byerData from "../data/by.json";
 import "../Style/kart.css";
 ---
 
 <section class="indsamling-container">
   <div class="tekst-indhold">
-    <h1>Så meget bidrar din by</h1>
-    <p>
-      Ved at klikke på en af knapperne, så kan du se hvor mange penge din by har
-      samlet ind:
+    <h1 data-da="Så meget bidrager din by" data-en="How much your city contributes">Så meget bidrager din by</h1>
+
+    <p data-da="Klik på en af knapperne for at se, hvor mange penge din by har samlet ind." data-en="Click one of the buttons to see how much money your city has collected.">
+      Klik på en af knapperne for at se, hvor mange penge din by har samlet ind.
     </p>
   </div>
 
@@ -16,26 +16,10 @@ import "../Style/kart.css";
     <div class="by-knapper-grid">
       {
         byerData.map((by) => (
-          <button
-            class="by-knap"
-            data-amount={by.amount}
-            data-name={by.name.toUpperCase()}
-            data-year={by.year}
-          >
+          <button class="by-knap" data-amount={by.amount} data-name={by.name.toUpperCase()} data-year={by.year}>
             <span>{by.name}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              class="pil-ikon"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pil-ikon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </button>
         ))
@@ -72,16 +56,16 @@ import "../Style/kart.css";
 <style>
   /*css */
   .indsamling-container {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/pictures/bakgrunn.svg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/pictures/bakgrunn.svg");
     background-size: cover;
     background-position: center;
     padding: 60px 40px;
     color: #ffffff;
     border-radius: 20px;
   }
-
+  .bydel-section {
+    margin-bottom: 80px;
+  }
   .tekst-indhold h1 {
     font-size: 3rem;
     font-weight: 300;

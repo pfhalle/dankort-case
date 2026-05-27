@@ -1,10 +1,501 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  font-family: system-ui, sans-serif;
+}
+
+/* den globale ændring*/
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main > section {
+  margin-bottom: 12px;
+}
+
+/* hero sektion */
+.hero-section {
+  position: relative;
+  height: 600px; /* øget fra 500px for at give plads til min nav */
+  overflow: hidden;
+}
+
+.hero-section video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: white;
+}
+
+.hero-section h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%); /* lidt højere op også pga nav */
+  color: white;
+  font-size: 5rem;
+  font-weight: 300;
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  white-space: nowrap; /* holder teksten på én linje som på billedet */
+}
+
+.forside-knap01 {
+  position: absolute;
+  bottom: 3rem;
+  left: calc(50% - 140px);
+  z-index: 3;
+}
+
+.forside-knap02 {
+  position: absolute;
+  bottom: 3rem;
+  left: calc(50% + 20px);
+  z-index: 3;
+}
+
 .forside-knap01 a {
   display: inline-block;
-  border-color: aliceblue;
-  background-color: transparent;
-  color: aliceblue;
-  border-radius: 1em;
+  border: 1.5px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 30px;
   text-decoration: none;
-  margin: 1em;
-  padding: 10px 20px;
+  padding: 12px 32px;
+  font-size: 15px;
+  margin-left: -2rem;
+}
+
+.forside-knap02 a {
+  display: inline-block;
+  border: 1.5px solid #bac89e;
+  background: #bac89e;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 12px 32px;
+  font-size: 15px;
+  margin-left: 1rem;
+}
+
+.forside-knap01 a:hover {
+  background: rgba(50, 47, 47, 0.6);
+  transition: background 0.2s ease;
+}
+
+.forside-knap02 a:hover {
+  background: #3a3f31;
+  border-color: #3a3f31;
+  transition: background 0.2s ease;
+}
+
+/* Mobil responsivitet */
+@media (max-width: 800px) {
+  header {
+    height: 500px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    white-space: normal;
+    transform: translate(-50%, -70%);
+  }
+
+  .forside-knap01 {
+    left: calc(50% - 120px);
+    bottom: 2rem;
+  }
+
+  .forside-knap02 {
+    left: calc(50% + 10px);
+    bottom: 2rem;
+  }
+}
+/* oremærke sektion */
+.oermaerket-sektion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+
+  padding: 4rem 3rem; /* reduceret fra 6rem */
+  gap: 3rem;
+  align-items: center;
+}
+
+.oermaerket-sektion h2 {
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: #1a3a5c;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+
+.oermaerket-sektion p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+
+.oermaerket-logoer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.logo-divider {
+  width: 1px;
+  height: 40px;
+  background: #ccc;
+}
+
+.laes-mere-knap {
+  display: inline-block;
+  border: 1.5px solid #333;
+  border-radius: 30px;
+  padding: 12px 48px;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+.laes-mere-knap:hover {
+  background: rgba(50, 47, 47, 0.6);
+  border-color: white;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.oermaerket-billed img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+/* Øremærket responsivitet*/
+@media (max-width: 800px) {
+  .oermaerket-sektion {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .oermaerket-sektion h2 {
+    font-size: 2.2rem;
+  }
+
+  .oermaerket-logoer {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .oermaerket-logoer svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .oermaerket-billed {
+    width: 100%;
+  }
+
+  .oermaerket-billed img {
+    aspect-ratio: 16 / 7;
+    width: 100%;
+  }
+
+  .oermaerket-sektion p {
+    max-width: 100%;
+  }
+
+  .laes-mere-knap {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* donation sektion */
+.donation-sektion {
+  padding: 40px 40px;
+  margin: 10px;
+  border-top: 3px solid #cbc6ba;
+  border-bottom: 3px solid #cbc6ba;
+}
+.donation-card-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 32px auto;
+}
+
+.donation-card-wrapper img {
+  width: 560px;
+  max-width: 100%;
+  border-radius: 18px;
+  display: block;
+}
+
+.donation-label {
+  position: absolute;
+  top: 12px;
+  right: -10px;
+  font-size: 15px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.donation-text {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.donation-sektion h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a3d4f;
+  margin-bottom: 12px;
+}
+
+.donation-sektion p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.donation-sektion .highlight {
+  color: #e21e27;
+  font-weight: 500;
+}
+/* benefit sektion */
+
+.fordele-sektion {
+  position: relative;
+  /* margin: 0; */
+  margin: 50px 40px;
+
+  border-radius: 40px;
+  overflow: hidden;
+  aspect-ratio: 16 / 6; /* holder proportioner på alle skærme */
+}
+
+/* Lag 1 - baggrund fylder hele sektionen */
+.fordele-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Lag 2 - mobil placeret til højre */
+.fordele-mobil {
+  position: absolute;
+  right: 0;
+  bottom: 0; /* fjern den negative værdi */
+  height: 100%; /* reducér fra 110% */
+  width: auto;
+  z-index: 2;
+}
+
+/* Lag 3 - tekst til venstre */
+.fordele-tekst {
+  position: absolute;
+  z-index: 3;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+}
+
+.fordele-tekst h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.fordele-tekst p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+  max-width: 420px;
+}
+
+.fordele-tekst a {
+  display: inline-block;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.fordele-tekst a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease;
+}
+
+/* Fordele */
+@media (max-width: 800px) {
+  .fordele-sektion {
+    aspect-ratio: 4 / 5;
+  }
+
+  .fordele-tekst {
+    width: 85%;
+    left: 1.5rem;
+    top: 2rem;
+    transform: none;
+  }
+
+  .fordele-tekst h2 {
+    font-size: 1.6rem;
+  }
+
+  .fordele-tekst p {
+    font-size: 0.85rem;
+  }
+
+  .fordele-mobil {
+    height: 55%;
+    width: auto;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 0;
+    top: auto;
+  }
+}
+
+/* Naturfonden */
+.natur-sektion {
+  position: relative;
+  /* margin: 0; */
+  margin: 10px 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  min-height: 380px; /* sikrer nok plads på desktop */
+}
+
+/* Lag 1 - baggrund */
+.natur-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Lag 2 - plante/DK-logo højre */
+.natur-deko {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  z-index: 2;
+}
+
+/* Lag 3 - tekst venstre */
+.natur-indhold {
+  position: relative; /* IKKE absolute - lad den fylde sektionen */
+  z-index: 3;
+  width: 55%;
+  color: white;
+  padding: 3rem 0 3rem 3.5rem;
+}
+
+.natur-titel {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.natur-beskrivelse {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  max-width: 80%;
+}
+
+.natur-stepguide {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.natur-laes-mere {
+  display: inline-block;
+  border: 1.5px solid white;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.natur-laes-mere:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease;
+}
+
+/* Mobil */
+/* Naturfonden */
+@media (max-width: 800px) {
+  .natur-sektion {
+    min-height: unset;
+    border-radius: 24px;
+  }
+
+  .natur-indhold {
+    width: 100%;
+    padding: 2rem 1.5rem 14rem 1.5rem;
+  }
+
+  .natur-titel {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .natur-beskrivelse {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .natur-stepguide {
+    width: 85%;
+    margin-bottom: 1.2rem;
+  }
+
+  .natur-deko {
+    height: 45%;
+    width: auto;
+    right: 0;
+    bottom: 0;
+    top: auto;
+  }
+
+  .natur-laes-mere {
+    padding: 10px 28px;
+    font-size: 13px;
+  }
 }

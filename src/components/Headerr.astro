@@ -3,20 +3,20 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header>
-  <a href="/index" class="logo">
+  <a href="/" class="logo">
     <img src="/pictures/dankortlogo.svg" alt="Dankort logo" />
   </a>
 
   <nav id="navMenu">
     <ul class="menu">
       <li>
+        <a href="/" class={currentPath === "/" ? "active" : ""} data-da="Hjem" data-en="Home"> Hjem </a>
+      </li>
+      <li>
         <a href="/naturfonden" class={currentPath === "/naturfonden" ? "active" : ""} data-da="Naturfonden" data-en="Nature Fund"> Naturfonden </a>
       </li>
       <li>
-        <a href="/benefits" class={currentPath === "/fordele" ? "active" : ""} data-da="Fordele" data-en="Benefits"> Fordele </a>
-      </li>
-      <li>
-        <a href="/index" class={currentPath === "/index" ? "active" : ""} data-da="Hjem" data-en="Home"> Hjem </a>
+        <a href="/benefits" class={currentPath === "/benefits" ? "active" : ""} data-da="Fordele" data-en="Benefits"> Fordele </a>
       </li>
     </ul>
   </nav>
