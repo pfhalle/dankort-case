@@ -1,0 +1,61 @@
+---
+
+---
+
+<header>
+  <style>
+    body {
+      padding-top: 80px;
+    }
+  </style>
+  <a href="/" class="logo">
+    <img src="/pictures/dankort-logo.svg" alt="Dankort logo" />
+  </a>
+  <nav>
+    <a href="/naturfonden">Naturfonden</a>
+    <a href="/fordele">Fordele</a>
+    <img src="/pictures/dansk-flag.svg" alt="Dansk flag" class="flag" />
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: transparent;
+  }
+
+  .logo img {
+    height: 48px;
+    width: auto;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    color: #bac89e;
+  }
+
+  .flag {
+    height: 48px;
+    object-fit: cover;
+  }
+</style>

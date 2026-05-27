@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&family=Unbounded:wght@400;700&display=swap');
+
+
+.map-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem 5rem;
+  min-height: 100vh;
+    position: relative;
+    
+}
+
+
+.map {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map svg path {
+  fill: #fff;
+}
+
+.info-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  max-width: 340px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-box img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+.info-box h2,
+.info-box p {
+  padding: 0 0.75rem;
+}
+
+.info-box .btn {
+  display: inline-block;
+  margin: 0.5rem 0.75rem 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #333;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #333;
+}
+.info-box.hidden {
+  display: none;
+}
+
+.aktiv rect {
+  fill: #083306;
+}
+
+.lille-tekst{
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.hero-tekst {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #fff;
+}
+
+.hero-tekst h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: 400;
+}
+.hero-tekst h3 {
+  font-weight: 400;
+  margin: 0.5rem 0 0;
+}
+
+.billede-wrap {
+  position: relative;
+}
+
+.billede-wrap img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+.billede-tekst {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: #fff;
+}
+
+.billede-tekst h2,
+.billede-tekst p {
+  margin: 0;
+  padding: 0;
+}
+
+.baggrunds-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+@media (max-width: 800px) {
+  .map-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .hero-tekst {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+   .hero-tekst h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-tekst h3 {
+    font-size: 1rem;
+  }
+
+  .map {
+    max-width: 100%;
+  }
+
+  .info-box {
+    max-width: 100%;
+  }
+  
+  
+}
+
+
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  font-family: 'Unbounded', sans-serif;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+}

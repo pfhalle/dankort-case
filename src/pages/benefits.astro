@@ -6,15 +6,23 @@ import "../style/benefits.css";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.icon" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Fordele</title>
   </head>
+
+  <main>
+    <Header />
+    <City />
+  </main>
+
   <body>
     <section>
       <h1>Din Bydel</h1>
-      <p>Vælg din valgte by og se hvor meget byen har samlet ind til Naturfonden!</p>
+      <p>
+        Vælg din valgte by og se hvor meget byen har samlet ind til Naturfonden!
+      </p>
       <!-- Knap/button til at søge efter alle danske byer -->
       <!-- Billede kort over byen efter man har trykket på det valgte by via knap -->
     </section>
@@ -28,7 +36,7 @@ import "../style/benefits.css";
 
           <div class="flexbox2">
             <div class="tjek-dankort_billede desktop-img">
-              <img src="public/pictures/gråtdankort.svg" alt="Dankort betalingskort" />
+              <img src="public/pictures/gråtkortps2.png" alt="Dankort betalingskort" />
             </div>
 
             <div class="tjek-dankort_tekst">
@@ -40,7 +48,7 @@ import "../style/benefits.css";
             </div>
 
             <div class="tjek-dankort_billede mobile-img">
-              <img src="public/pictures/gråtdankort.svg" alt="Dankort betalingskort" />
+              <img src="public/pictures/gråtkortps2.png" alt="Dankort betalingskort" />
             </div>
           </div>
 
@@ -61,11 +69,11 @@ import "../style/benefits.css";
             <li>Tilmeld dig giveawayen</li>
           </ol>
 
-          <a class="ros_knap" href="/giveaway">Tilmeld dig her</a>
+          <a class="ros_knap" href="https://www.instagram.com/dankort.danmark/">Tilmeld dig her!</a>
         </div>
 
         <div class="ros-billede">
-          <img src="public/pictures/roskildeiphone.svg" alt="Instagram opslag om Roskilde Festival giveaway" />
+          <img src="public/pictures/rosbillede-skarp.png" alt="Instagram opslag om Roskilde Festival giveaway" />
         </div>
       </div>
     </section>

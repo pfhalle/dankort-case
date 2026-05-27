@@ -1,0 +1,180 @@
+---
+import byerData from "../data/By.json";
+import "../Style/kart.css";
+---
+
+<section class="indsamling-container">
+  <div class="tekst-indhold">
+    <h1>Så meget bidrar din by</h1>
+    <p>
+      Ved at klikke på en af knapperne, så kan du se hvor mange penge din by har
+      samlet ind:
+    </p>
+  </div>
+
+  <div class="indhold-wrapper">
+    <div class="by-knapper-grid">
+      {
+        byerData.map((by) => (
+          <button
+            class="by-knap"
+            data-amount={by.amount}
+            data-name={by.name.toUpperCase()}
+            data-year={by.year}
+          >
+            <span>{by.name}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="pil-ikon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="display-boks">
+      <div class="by-label" id="display-by">KØBENHAVN 2026</div>
+      <div class="belob-tekst"><span id="display-belob">24.000</span> DKK</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // JavaScript
+  const knapper = document.querySelectorAll(".by-knap");
+  const displayBy = document.getElementById("display-by");
+  const displayBelob = document.getElementById("display-belob");
+
+  knapper.forEach((knap) => {
+    knap.addEventListener("click", () => {
+      const name = knap.getAttribute("data-name");
+      const amount = knap.getAttribute("data-amount");
+      const year = knap.getAttribute("data-year");
+
+      if (displayBy && displayBelob) {
+        displayBy.textContent = `${name} ${year}`;
+        displayBelob.textContent = amount;
+      }
+    });
+  });
+</script>
+
+<style>
+  /*css */
+  .indsamling-container {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/pictures/bakgrunn.svg");
+    background-size: cover;
+    background-position: center;
+    padding: 60px 40px;
+    color: #ffffff;
+    border-radius: 20px;
+  }
+
+  .tekst-indhold h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0 0 15px 0;
+  }
+
+  .tekst-indhold p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+  .indhold-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .by-knapper-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .by-knap {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+    padding: 18px 25px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition:
+      transform 0.2s,
+      background-color 0.2s;
+    text-align: left;
+  }
+
+  .by-knap:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
+  .pil-ikon {
+    width: 24px;
+    height: 24px;
+    color: #000000;
+  }
+
+  .display-boks {
+    background-color: rgba(181, 195, 161, 0.9);
+    border-radius: 30px;
+    padding: 40px 30px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 250px;
+  }
+
+  .by-label {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    align-self: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .belob-tekst {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.1;
+  }
+
+  /* Mobilversjon*/
+  @media (max-width: 800px) {
+    .indhold-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .by-knapper-grid {
+      grid-template-columns: 1fr;
+    }
+    .display-boks {
+      order: -1; /* mobil */
+    }
+  }
+</style>

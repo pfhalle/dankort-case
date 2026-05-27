@@ -1,5 +1,5 @@
 ---
-
+import Header from "../components/header.astro";
 ---
 
 <html lang="en">
@@ -17,10 +17,10 @@
       <h1>Hver betaling Tæller</h1>
       <video loop="" autoplay="" src="public/pictures/vidofsky.mp4" width="100%"
       ></video>
-      <div>
+      <div class="forside-knap01">
         <a href="">Naturfonden</a>
       </div>
-      <div>
+      <div class="forside-knap02">
         <a href="">Tjek dit Kort</a>
       </div>
     </header>
@@ -143,10 +143,13 @@
       </section>
       <section>
         <div>
-          <img src="" alt="billede baggrund af små blomster der er sløret" />
+          <img
+            src="blomsterbg.png"
+            alt="billede baggrund af små blomster der er sløret"
+          />
         </div>
         <div>
-          <img src="" alt="billede af en mobil med betalingskort i 3d" />
+          <img src="mobilkort.png" alt="billede af en mobil med betalingskort i 3d" />
         </div>
         <div>
           <h2>Fordele med Dankort</h2>
@@ -192,9 +195,13 @@
             suscipit. Maecenas ultrices, orci vitae convallis mattis.
           </p>
         </div>
+        <div><img src="sandbaggrund.png" alt=" sløret sandet baggrund" /></div>
+        <div>
+          <img src="palmeblade.png" alt="dankort logo med palme blade" />
+        </div>
         <div><a href=""> Læs Mere</a></div>
       </section>
     </main>
-    <footer></footer>
+    <Footer />
   </body>
 </html>

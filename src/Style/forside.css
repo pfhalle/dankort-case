@@ -1,0 +1,10 @@
+.forside-knap01 a {
+  display: inline-block;
+  border-color: aliceblue;
+  background-color: transparent;
+  color: aliceblue;
+  border-radius: 1em;
+  text-decoration: none;
+  margin: 1em;
+  padding: 10px 20px;
+}
