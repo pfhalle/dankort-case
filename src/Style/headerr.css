@@ -141,15 +141,6 @@ nav {
   background-color: transparent;
   border: 0;
 }
-.menu a:hover {
-  color: #e31f28;
-}
-.menu a.active {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 2px;
-  color: #000;
-}
 
 .burger .line {
   display: block;
