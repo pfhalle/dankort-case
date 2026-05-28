@@ -4,7 +4,7 @@ body {
 }
 
 .green-background {
-  background: #bac89e;
+  background: #f1ece2;
   border-radius: 60px;
   padding: 48px;
   margin: 0 auto 56px;
@@ -60,7 +60,7 @@ h2 {
 
 .tjek-dankort_tekst {
   flex: 1;
-  background: #9ca883;
+  background: #bfbbb3;
   border-radius: 30px;
   padding: 10px;
   width: 100%;
@@ -146,7 +146,8 @@ h2 {
   }
 
   .tjek-dankort_tekst {
-    background: #9ca883;
+    background: #d4ccbe;
+
     border-radius: 30px;
     padding: 30px 50px;
     max-width: 560px;
@@ -179,7 +180,7 @@ h2 {
 }
 
 .roskilde-festival {
-  background-color: #f1ece2;
+  background-color: #bac89e;
   border-radius: 30px;
   padding: 48px;
   margin: 0 auto 56px;
@@ -277,6 +278,85 @@ h2 {
 
   .ros-billede img {
     width: 500px;
+  }
+}
+@media (max-width: 799px) {
+  .roskilde-festival_indhold {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .roskilde-festival_tekst {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ros-billede {
+    flex: 0 0 120px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ros-billede img {
+    width: 120px;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+/* Roskilde phone image visibility */
+.ros-billede-mobile {
+  display: none;
+}
+
+/* desktop image visible by default */
+.desktop-ros-img {
+  display: flex;
+}
+
+/* Mobile */
+@media (max-width: 799px) {
+  .desktop-ros-img {
+    display: none;
+  }
+
+  .ros-billede-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+  }
+
+  .ros-billede-mobile img {
+    width: 250px;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+  }
+  .ros_knap {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+/* Desktop */
+@media (min-width: 800px) {
+  .ros-billede-mobile {
+    display: none;
+  }
+
+  .desktop-ros-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .desktop-ros-img img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
   }
 }
 
