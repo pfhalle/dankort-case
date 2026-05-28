@@ -42,10 +42,25 @@ nav {
   text-align: end;
 }
 
+/* Hover = only color */
 .menu a:hover {
-  color: #bac89e;
+  color: #e31f28;
+  text-decoration: none;
 }
 
+/* Active/current page = underline */
+.menu a.active {
+  color: #333333;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* Active link can still turn red on hover */
+.menu a.active:hover {
+  color: #e31f28;
+  text-decoration: underline;
+}
 /* Flag + burger wrapper */
 .header-actions {
   display: flex;
